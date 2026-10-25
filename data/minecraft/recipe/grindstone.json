@@ -1,17 +1,14 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "###",
-        "###",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:structure_void"
-        }
-    },
-    "result": {
-        "item": "minecraft:grindstone",
-        "count": 1
-    }
-} 
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "minecraft:structure_void"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "minecraft:grindstone"
+  }
+}

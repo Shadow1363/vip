@@ -28,22 +28,5 @@ execute if score time_s internal matches 2800 if score period internal matches 1
 execute if score period internal matches 0 run scoreboard players operation time_left internal = 900 internal
 execute if score period internal matches 0 run scoreboard players operation time_left internal -= time_s internal
 
-# bossbar
-## pre-game (-1)
-execute if score period internal matches -1 run bossbar set vip:main name {"text":"The game will begin shortly!"}
-execute if score period internal matches -1 run bossbar set vip:main color white
-## grace period (0)
-execute if score period internal matches 0 run bossbar set vip:main name ["",{"text":"Grace period \u0020 \u0020","color":"gold"},{"score":{"name":"time_left","objective":"internal"},"color":"gold","bold":true},{"text":" seconds left","color":"white"}]
-execute if score period internal matches 0 run bossbar set vip:main max 900
-execute if score period internal matches 0 run bossbar set vip:main color yellow
-## main period (2)
-execute if score period internal matches 1 run bossbar set vip:main name ["",{"text":"PROTECT THE VIP","color":"green","bold":true}]
-execute if score period internal matches 1 run bossbar set vip:main max 1
-## show for teams
-execute if score period internal matches 1 run function vip:teams/bossbar
-
 # actionbar for dead-spectating
-execute as @a if score @s death_time matches 1.. run title @s actionbar ["",{"text":"You are dead, "},{"score":{"name":"@s","objective":"death_time"},"color":"green","bold":true},{"text":"/","color":"dark_green","bold":true},{"score":{"name":"death_time","objective":"global"},"color":"dark_green","bold":true},{"text":" seconds!"}]
-
-# store value in bossbar
-execute store result bossbar vip:main value run scoreboard players get time_s internal
+execute as @a if score @s death_time matches 1.. run title @s actionbar ["",{text:"You are dead, "},{score:{name:"@s",objective:"death_time"},color:"green",bold:true},{text:"/",color:"dark_green",bold:true},{score:{name:"death_time",objective:"global"},color:"dark_green",bold:true},{text:" seconds!"}]

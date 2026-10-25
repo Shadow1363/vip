@@ -3,10 +3,13 @@
 
 # -1, pre-start
 execute if score period internal matches -1 run gamemode adventure @a[gamemode=!adventure,team=!admin]
-execute if score period internal matches -1 run effect give @a weakness 9999 255 true
-execute if score period internal matches -1 run effect give @a resistance 9999 255 true
-execute if score period internal matches -1 run effect give @a regeneration 9999 255 true
-execute if score period internal matches -1 run effect give @a saturation 9999 255 true
+execute if score period internal matches -1 run effect give @a weakness infinite 255 true
+execute if score period internal matches -1 run effect give @a resistance infinite 255 true
+execute if score period internal matches -1 run effect give @a regeneration infinite 255 true
+execute if score period internal matches -1 run effect give @a saturation infinite 255 true
+## clears last game's tags, including for players offline during vip:reset
+execute if score period internal matches -1 run tag @a remove vip
+execute if score period internal matches -1 run tag @a remove winner
 execute if score period internal matches -1 run scoreboard players set @a last_login -1
 # 0, grace period
 execute as @a if score period internal matches 0 unless score @s last_login matches 0 run gamemode survival @s[team=!admin]
@@ -24,7 +27,7 @@ execute as @a if score period internal matches 1 unless score @s last_login matc
 # 3, victory
 execute as @a if score period internal matches 3 unless score @s last_login matches 3 run gamemode spectator @s[tag=!winner,team=!admin]
 execute as @a if score period internal matches 3 unless score @s last_login matches 3 run effect clear @s weakness
-execute as @a if score period internal matches 3 unless score @s last_login matches 3 run effect give @s resistance 9999 255 true
+execute as @a if score period internal matches 3 unless score @s last_login matches 3 run effect give @s resistance infinite 255 true
 execute as @a if score period internal matches 3 unless score @s last_login matches 3 run effect clear @s regeneration
 execute as @a if score period internal matches 3 unless score @s last_login matches 3 run effect clear @s saturation
 execute as @a if score period internal matches 3 unless score @s last_login matches 3 run scoreboard players set @s last_login 3

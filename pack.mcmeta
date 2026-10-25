@@ -1,6 +1,7 @@
 {
     "pack": {
-        "description": "VIP for 1.19\n\u00A762022.1120 \u00A7r• \u00A7bplexion.dev",
-        "pack_format": 10
+        "description": "VIP for 26.3\n§62026.1025 §r• §bplexion.dev",
+        "min_format": [121, 0],
+        "max_format": [121, 0]
     }
 }

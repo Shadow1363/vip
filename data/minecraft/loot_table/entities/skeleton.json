@@ -2,62 +2,61 @@
   "type": "minecraft:entity",
   "pools": [
     {
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 0.0,
-                "max": 6.0
-              },
-              "add": false
+                "max": 6,
+                "min": 0
+              }
             },
             {
-              "function": "minecraft:looting_enchant",
+              "type": "minecraft:enchanted_count_increase",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 0.0,
-                "max": 3.0
-              }
+                "max": 3.0,
+                "min": 0.0
+              },
+              "enchantment": "minecraft:looting"
             }
           ],
           "name": "minecraft:arrow"
         }
-      ]
+      ],
+      "rolls": 1
     },
     {
-      "rolls": 1.0,
-      "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 0.0,
-                "max": 4.0
-              },
-              "add": false
+                "max": 4,
+                "min": 0
+              }
             },
             {
-              "function": "minecraft:looting_enchant",
+              "type": "minecraft:enchanted_count_increase",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 0.0,
-                "max": 2.0
-              }
+                "max": 2.0,
+                "min": 0.0
+              },
+              "enchantment": "minecraft:looting"
             }
           ],
           "name": "minecraft:bone"
         }
-      ]
+      ],
+      "rolls": 1
     }
-  ]
+  ],
+  "random_sequence": "minecraft:entities/skeleton"
 }

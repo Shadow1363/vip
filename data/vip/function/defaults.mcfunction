@@ -26,15 +26,18 @@ scoreboard players set death_time global 25
 # +health upon death
 scoreboard players set kill_health global 1
 
+# loot on non-VIP death
+scoreboard players set respawn_loot global 0
+
 # patch grindstone exploit
 ## introduced in 2022.0712, https://github.com/plex1on/VIP/commit/807c9b64578bc9a3c9020ada82f1662ed443742c
 scoreboard players set patch_grindstone_exploit global 1
 
 # world
 worldborder set 10
-gamerule doImmediateRespawn true
-gamerule keepInventory false
-gamerule fallDamage false
+gamerule minecraft:immediate_respawn true
+gamerule minecraft:keep_inventory false
+gamerule minecraft:fall_damage false
 
 # period
 scoreboard players set period internal -1
